@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Stock Infogram</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="assets/css/materialize.min.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="assets/css/style.css" media="all" rel="stylesheet" type="text/css"/>
+
+<!-- Insert this line above script imports  -->
+<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+
+<!-- <script>window.$ = window.jQuery = require('jquery');</script> -->
+<script type="text/javascript" src="./assets/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="./assets/js/jquery.canvasjs.min.js"></script>
+<script type="text/javascript" src="./assets/js/materialize.min.js"></script>
+<script type="text/javascript" src="./assets/js/scripts.js"></script>
+
+<!-- Insert this line after script imports -->
+<script>if (window.module) module = window.module;</script>
+
+</head>
+<body>
+	  
+	<div class="navbar-fixed">
+		<!-- Dropdown Structure -->
+		<ul id='dropdown-graph' class='dropdown-content'>
+			<li id="line"><a href="#!">Line Graph</a></li>
+			<li id="ohlc"><a href="#!">OHLC Graph</a></li>
+		</ul>
+		<nav>
+			<div class="nav-wrapper">
+				<a href="#!" class="brand-logo center">Stock Infogram</a>
+				<ul class="right hide-on-med-and-down">
+					<!-- Dropdown Trigger -->
+					<li><a class='dropdown-trigger white-text' data-target='dropdown-graph' href='#'>Graph Selector</a></li>
+					<li id="hideData"><a href="#">Hide Data</a></li>
+					<li id="showData"><a href="#">Show Data</a></li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+	
+	<ul class="sidenav" id="mobile-demo">
+		<li id="hideData"><a href="#">Hide Data</a></li>
+		<li id="showData"><a href="#">Show Data</a></li>
+	</ul>
+
+	<section>
+		<div class="tooltipSpace right">
+			<form id="tooltipSetForm">
+				<ul class="tooltipOptions">
+					<li><label>
+						<input class="with-gap pink darken-4" name="tooltipSelector" type="radio" value="point" checked />
+						<span>Points</span>
+					  </label>
+					</li>
+					<li><label>
+						<input class="with-gap pink darken-4" name="tooltipSelector" type="radio" value="enf" />
+						<span>EnF Values</span>
+					  </label>
+					</li>
+					<li><label>
+						<input class="with-gap pink darken-4" name="tooltipSelector" type="radio" value="percentage" />
+						<span>Percentage</span>
+					  </label>
+					</li>
+				</ul>
+			</form>
+		</div>
+	</section>
+					
+	<section class="linegraph graph">
+		<div id="chartContainer" style="height: 600px; width: 100%;"></div>
+	</section>
+	<section class="ohclgraph graph">
+		<div id="chartContainerOhlc" style="height: 600px; width: 100%; display: none;"></div>
+	</section>
+
+	<section>
+		<div class="row">
+			<div class="container">
+				<div class="commentSection card">
+					<h4>Comment</h4>
+					<div id="comment"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="data">
+		<div class="row">
+				<div class="container">
+					<div class="differenciator card">
+					<form id="distanceFinder" onsubmit="return false;">
+					<table class="responsive-table centered">
+						<thead>
+							<tr>
+								<th>Input 1</th>
+								<th>Input 2</th>
+								<th>Percentage Diff</th>
+								<th></th>
+								<th></th>
+							</tr>
+						</thead>
+				
+						<tbody>
+							<tr>
+								<td><input type="text" id="gvaly1" value=""/></td>
+								<td><input type="text" id="gvaly2" value=""/></td>
+								<td><span id="distance">0</span>%</td>
+								<td><input type="submit" class="btn pink darken-4 white-text" value="SUBMIT"/></td>
+								<td><input type="reset" class="btn pink darken-4 white-text" value="RESET"/></td>
+							</tr>
+						</tbody>
+					</table>
+					</form>
+					</div>
+				</div>
+			</div>
+	</section>
+	<script>
+		$('.dropdown-trigger').dropdown();
+	</script>	
+</body>
+</html>

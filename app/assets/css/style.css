@@ -1,0 +1,41 @@
+.canvasjs-chart-credit{
+	display:none !important;
+}
+nav{
+	background-color:#452344;
+	color: #fff;
+}
+.graph{
+	margin: 60px 15px;
+}
+.differenciator{
+	padding: 20px;
+}
+.uploader{
+	padding: 20px;
+}
+.excelUploader{
+	margin-top: 25px;
+}
+.commentSection {
+	padding: 25px;
+}
+
+ul.tooltipOptions li {
+	display:inline;
+  }
+
+.tooltipSpace{
+	height: 50px;
+	position: absolute;
+	right:25;
+}
+
+#chartContainer{
+	min-width: 900px;
+	height: 600px;
+}
+#chartContainerOhlc{
+	min-width: 900px;
+	height: 600px;
+}
